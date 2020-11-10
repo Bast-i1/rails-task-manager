@@ -8,12 +8,4 @@
 
 <p></p>
 
-<%= link_to "Edit", edit_task_path %>
-
-<p></p>
-
-<%= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Are you sure?"} %>
-
-<p></p>
-
-<%= link_to "Go back to your tasks list", tasks_path %>
+<%= link_to "Go back to your tasks list", tasks_path, class: "btn btn-outline-warning" %>

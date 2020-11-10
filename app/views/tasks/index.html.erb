@@ -4,10 +4,16 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= link_to task.title, task_path(task.id) %></li>
+    <li><%= link_to task.title, task_path(task) %></li>
+      <%= link_to edit_task_path(task) do %>
+      <p>✏️</p>
+      <% end %>
+      <%= link_to task_path(task), method: :delete, data: {confirm: "Are you sure?"} do %>
+      <p>🗑</p>
+      <% end %>
   <% end %>
 </ul>
 
 <p></p>
 
-<%= link_to "Add a new task", tasks_new_path %>
+<%= link_to "Add a new task", tasks_new_path, class: "btn btn-primary" %>
